@@ -1512,6 +1512,63 @@
     min-width: 260px;
   }
 }
+/* HAMBURGER HIDDEN ON DESKTOP */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* MOBILE FIX */
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 0;
+    padding: 15px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 12px 24px;
+    width: 100%;
+  }
+
+  /* DROPDOWN INSIDE MOBILE */
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    padding-left: 15px;
+  }
+
+  .nav-item-with-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+		
     </style>
 </head>
 <body>
@@ -2056,6 +2113,18 @@
 	<script>
   const track = document.querySelector('.services-track');
   track.style.animationDuration = track.children.length * 5 + 's';
+</script>
+						<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('active');
+}
+
+// Mobile dropdown toggle
+document.querySelectorAll('.nav-item-with-dropdown').forEach(item => {
+  item.querySelector('.dropdown-toggle').addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
 </script>
 </body>
 </html>
