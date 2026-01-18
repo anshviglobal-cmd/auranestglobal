@@ -34,6 +34,7 @@ def load_image(image_path):
     ).decode()
 
 # Load images
+logo = load_image("assets/logo.jpg")
 EFuseConnect = load_image("assets/im1.jpeg")
 Eutility = load_image("assets/Eutility.jpg")
 BuildOps360 = load_image("assets/BuildOps360.png")
