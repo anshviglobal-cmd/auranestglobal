@@ -49,6 +49,7 @@ Education = load_image("assets/Education.png")
 html = Path("index.html").read_text(encoding="utf-8")
 
 # Inject images into HTML
+html = html.replace("{{HERO_BG}}", logo)
 html = html.replace("{{EFuseConnect}}", EFuseConnect)
 html = html.replace("{{Eutility}}", Eutility)
 html = html.replace("{{BuildOps360}}", BuildOps360)
