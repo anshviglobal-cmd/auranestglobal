@@ -5,6 +5,27 @@ import base64
 st.set_page_config(
     page_title="AuraNest Global Solutions",
     layout="wide"
+    initial_sidebar_state="collapsed"
+)
+
+# Remove Streamlit default padding & header
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .block-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+    iframe {
+        height: 100vh !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 def load_image(image_path):
